@@ -5,3 +5,4 @@ project(Oving3)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -Wall -Wextra")
 
 add_executable(Oppg1and2 oppg1and2.cpp)
+add_executable(Commodity commodity.cpp)

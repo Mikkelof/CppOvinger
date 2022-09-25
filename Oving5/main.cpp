@@ -16,22 +16,32 @@ public:
     virtual ~Piece() {}
 
     Color color;
-    std::string color_string() const {
+    string color_string() const {
       if (color == Color::WHITE)
         return "white";
       else
         return "black";
     }
 
+    virtual string print() const = 0;
+
     /// Return color and type of the chess piece
-    virtual std::string type() const = 0;
+    virtual string type() const = 0;
 
     /// Returns true if the given chess piece move is valid
     virtual bool valid_move(int from_x, int from_y, int to_x, int to_y) const = 0;
   };
 
   class King : public Piece {
-    std::string type() const override {
+    string type() const override {
+      if (color == Color::WHITE) {
+        return "white king";
+      } else {
+        return "black king";
+      }
+    }
+
+    virtual string print() const override {
       if (color == Color::WHITE) {
         return "white king";
       } else {
@@ -52,7 +62,7 @@ public:
   };
 
   class Knight : public Piece {
-    std::string type() const override {
+    string type() const override {
       if (color == Color::WHITE) {
         return "white knight";
       } else {
@@ -66,6 +76,14 @@ public:
         return true;
       } else {
         return false;
+      }
+    }
+
+    virtual string print() const override {
+      if (color == Color::WHITE) {
+        return "white knight";
+      } else {
+        return "black knight";
       }
     }
 
@@ -83,9 +101,24 @@ public:
   /// 8x8 squares occupied by 1 or 0 chess pieces
   vector<vector<unique_ptr<Piece>>> squares;
 
+  void print() {
+    for (size_t i = squares.size() - 1; i + 1 > 0; i--) {
+      cout << "  " << i + 1 << "  ";
+      for (size_t j = 0; j < squares.at(i).size(); j++) {
+        if (!squares.at(j).at(i)) {
+          cout << "      x      ";
+        } else {
+          auto &piece = squares.at(j).at(i);
+          cout << " " << piece->print() << " ";
+        }
+      }
+      cout << endl;
+    }
+  }
+
   /// Move a chess piece if it is a valid move.
   /// Does not test for check or checkmate.
-  bool move_piece(const std::string &from, const std::string &to) {
+  bool move_piece(const string &from, const string &to) {
     int from_x = from[0] - 'a';
     int from_y = stoi(string() + from[1]) - 1;
     int to_x = to[0] - 'a';
@@ -139,12 +172,21 @@ int main() {
 
   cout << "A simulated game:" << endl;
   board.move_piece("e1", "e2");
+  board.print();
   board.move_piece("g8", "h6");
+  board.print();
   board.move_piece("b1", "c3");
+  board.print();
   board.move_piece("h6", "g8");
+  board.print();
   board.move_piece("c3", "d5");
+  board.print();
   board.move_piece("g8", "h6");
+  board.print();
   board.move_piece("d5", "f6");
+  board.print();
   board.move_piece("h6", "g8");
+  board.print();
   board.move_piece("f6", "e8");
+  board.print();
 }

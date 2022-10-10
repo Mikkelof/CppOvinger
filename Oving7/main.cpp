@@ -40,4 +40,12 @@ int main() {
   while (b > a)
     b -= a;
   print("b = ", b);
+
+  Fraction newFrac = 2 - a;
+
+  print("Oppg1: 2 - a = ", newFrac);
+
+  a = a - 2;
+
+  print("Oppg1: a - 2 = ", a);
 }

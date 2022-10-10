@@ -11,6 +11,7 @@ public:
   void set(int numerator_, int denominator_ = 1);
   Fraction operator+(const Fraction &other) const;
   Fraction operator-(const Fraction &other) const;
+  Fraction operator-(int num) const;
   Fraction operator*(const Fraction &other) const;
   Fraction operator/(const Fraction &other) const;
   Fraction operator-() const;
@@ -32,3 +33,5 @@ private:
   void reduce();
   int compare(const Fraction &other) const;
 };
+
+Fraction operator-(int integer, const Fraction &other);

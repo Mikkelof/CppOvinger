@@ -61,6 +61,14 @@ Fraction Fraction::operator-() const {
   return fraction;
 }
 
+Fraction Fraction::operator-(int integer) const {
+  return {numerator - (integer * denominator), denominator};
+}
+
+Fraction operator-(int integer, const Fraction &other) {
+  return {(other.denominator * integer) - other.numerator, other.denominator};
+}
+
 Fraction Fraction::operator*(const Fraction &other) const {
   Fraction fraction = *this;
   fraction *= other;

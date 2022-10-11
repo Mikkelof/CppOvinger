@@ -1,0 +1,3 @@
+/home/ayy/Desktop/CppOvinger/Oving7/Oppg1/build/CMakeFiles/Oppg1.dir
+/home/ayy/Desktop/CppOvinger/Oving7/Oppg1/build/CMakeFiles/edit_cache.dir
+/home/ayy/Desktop/CppOvinger/Oving7/Oppg1/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/ayy/Desktop/CppOvinger/Oving7/Oppg1/build",
+  "command": "/usr/bin/c++    -std=c++1y -Wall -Wextra -o CMakeFiles/Oppg1.dir/main.cpp.o -c /home/ayy/Desktop/CppOvinger/Oving7/Oppg1/main.cpp",
+  "file": "/home/ayy/Desktop/CppOvinger/Oving7/Oppg1/main.cpp"
+},
+{
+  "directory": "/home/ayy/Desktop/CppOvinger/Oving7/Oppg1/build",
+  "command": "/usr/bin/c++    -std=c++1y -Wall -Wextra -o CMakeFiles/Oppg1.dir/fraction.cpp.o -c /home/ayy/Desktop/CppOvinger/Oving7/Oppg1/fraction.cpp",
+  "file": "/home/ayy/Desktop/CppOvinger/Oving7/Oppg1/fraction.cpp"
+}
+]

@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++1y -Wall -Wextra -rdynamic CMakeFiles/Oppg1.dir/main.cpp.o CMakeFiles/Oppg1.dir/fraction.cpp.o -o Oppg1 
